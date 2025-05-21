@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-md-12 pb--120 pt--70">
                     <div class="content">
-                        <div class="inner">
+                        <div class="inner" >
                             <div class="rbt-new-badge rbt-new-badge-one">
                                 <span class="rbt-new-badge-icon">🏆</span>¡Expertos en Sistemas de Gestión de Seguridad y
                                 Salud en el Trabajo y Normas Internacionales ISO!
@@ -33,7 +33,7 @@
                             </div>
                         </div>
                         <div class="shape-wrapper" id="scene">
-                            <img src="images/images/persona1.png" alt="Hero Image" style="width: 110%; max-width: none;">
+                            <img src="images/images/ingeniero_sinfondo.png" alt="Hero Image">
 
                             {{-- <div class="hero-bg-shape-1 layer" data-depth="0.4">
                                     <img src="images/" alt="Hero Image Background Shape">

@@ -138,6 +138,7 @@
   --color-gray-light: #F6F6F6;
   --color-gray-lighter: #ebebeb;
   --color-light: #F5F7FA;
+  --color-conserp: #e6e6e6;
   --color-lighter: #F2F5F9;
   --primary-opacity: #2f57ef21;
   --secondary-opacity: #b966e721;
@@ -14373,7 +14374,7 @@ span.transparent-button:hover i {
   border-radius: 100px;
   text-transform: uppercase;
   display: inline-block;
-  background: var(--color-primary);
+  background: var(--color-conserp);
   color: var(--color-primary);
 }
 .section-title .subtitle-2 {
@@ -24607,7 +24608,7 @@ blockquote.has-text-align-right cite,
     Banner Style Home One And Home Five (variation-2)
 -------------------------------------------------------------*/
 .rbt-banner-1 {
-  background-color: var(--color-light);
+  background-color: var(--color-conserp);
   padding: 0 150px;
   position: relative;
   overflow: hidden;
