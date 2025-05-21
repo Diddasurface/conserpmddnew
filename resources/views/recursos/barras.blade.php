@@ -272,8 +272,8 @@
                     <div class="rbt-main-navigation d-none d-xl-block">
                         <nav class="mainmenu-nav">
                             <ul class="mainmenu">
-                                <li class="with-megamenu  position-static">
-                                    <a href="#">Inicio</a>
+                                <li class="with-megamenu position-static {{ request()->is('/') ? 'active' : '' }}">
+                                    <a href="{{ route('inicio') }}">Inicio</a>
                                 </li>
 
                                 <li class="with-megamenu has-menu-child-item">
@@ -383,9 +383,11 @@
                                     </ul>
                                 </li>
 
-                                <li class="with-megamenu  position-static">
-                                    <a href="#">Nosotros </a>
+                                <li
+                                    class="with-megamenu position-static {{ request()->is('nosotros') ? 'active' : '' }}">
+                                    <a href="{{ route('nosotros') }}">Nosotros</a>
                                 </li>
+
 
                                 <li class="with-megamenu has-menu-child-item position-static">
                                     <a href="#">Servicios <i class="feather-chevron-down"></i></a>
@@ -453,59 +455,13 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- End Mega Menu  -->
                                 </li>
 
-                                <li class="with-megamenu has-menu-child-item position-static">
-                                    <a href="#">Contactanos <i class="feather-chevron-down"></i></a>
-                                    <!-- Start Mega Menu  -->
-                                    <div class="rbt-megamenu grid-item-3">
-                                        <div class="wrapper">
-                                            <div class="row row--15">
-                                                <div class="col-lg-12 col-xl-4 col-xxl-4 single-mega-item">
-                                                    <h3 class="rbt-short-title">Blog Styles</h3>
-                                                    <ul class="mega-menu-item">
-                                                        <li><a href="blog-list.html">Blog List</a></li>
-                                                        <li><a href="blog.html">Blog Grid</a></li>
-                                                        <li><a href="blog-grid-minimal.html">Blog Grid Minimal</a></li>
-                                                        <li><a href="blog-with-sidebar.html">Blog With Sidebar</a></li>
-                                                        <li><a href="blog-details.html">Blog Details</a></li>
-                                                        <li><a href="post-format-standard.html">Post Format
-                                                                Standard</a></li>
-                                                        <li><a href="post-format-gallery.html">Post Format Gallery</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-
-                                                <div class="col-lg-12 col-xl-4 col-xxl-4 single-mega-item">
-                                                    <h3 class="rbt-short-title">Get Started</h3>
-                                                    <ul class="mega-menu-item">
-                                                        <li><a href="post-format-quote.html">Post Format Quote</a></li>
-                                                        <li><a href="post-format-audio.html">Post Format Audio</a></li>
-                                                        <li><a href="post-format-video.html">Post Format Video</a></li>
-                                                        <li><a href="#">Media Under Title <span
-                                                                    class="rbt-badge-card">Coming</span></a></li>
-                                                        <li><a href="#">Sticky Sidebar <span
-                                                                    class="rbt-badge-card">Coming</span></a></li>
-                                                        <li><a href="#">Auto Masonry <span
-                                                                    class="rbt-badge-card">Coming</span></a></li>
-                                                        <li><a href="#">Meta Overlaid <span
-                                                                    class="rbt-badge-card">Coming</span></a></li>
-                                                    </ul>
-                                                </div>
-
-                                                <div class="col-lg-12 col-xl-4 col-xxl-4 single-mega-item">
-                                                    <div class="rbt-ads-wrapper">
-                                                        <a class="d-block" href="#"><img
-                                                                src="images/mobile-cat.jpg"
-                                                                alt="Education Images"></a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- End Mega Menu  -->
+                                <li
+                                    class="with-megamenu has-menu-child-item position-static {{ request()->is('contactanos') ? 'active' : '' }}">
+                                    <a href="{{ route('contactanos') }}">Contáctanos</a>
                                 </li>
+
                             </ul>
                         </nav>
                     </div>
@@ -1671,7 +1627,8 @@
         {{-- vistas --}}
 
         @yield('principal')
-
+        @yield('nosotros')
+        @yield('contactanos')
         {{-- vistas --}}
 
 

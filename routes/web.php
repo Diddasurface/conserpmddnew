@@ -17,4 +17,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('inicio');
+
+Route::get('/contactanos', function () {
+    return view('contactanos.contactanos');
+})->name('contactanos');
+
+
+Route::get('/nosotros', function () {
+    return view('nosotros.nosotros');
+})->name('nosotros');
