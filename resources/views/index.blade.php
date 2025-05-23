@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-md-12 pb--120 pt--70">
                     <div class="content">
-                        <div class="inner" >
+                        <div class="inner">
                             <div class="rbt-new-badge rbt-new-badge-one">
                                 <span class="rbt-new-badge-icon">🏆</span>¡Expertos en Sistemas de Gestión de Seguridad y
                                 Salud en el Trabajo y Normas Internacionales ISO!
@@ -35,15 +35,10 @@
                         <div class="shape-wrapper" id="scene">
                             <img src="images/images/ingeniero_sinfondo.png" alt="Hero Image">
 
-                            {{-- <div class="hero-bg-shape-1 layer" data-depth="0.4">
-                                    <img src="images/" alt="Hero Image Background Shape">
-                                </div>
-                                <div class="hero-bg-shape-2 layer" data-depth="0.4">
-                                    <img src="images/" alt="Hero Image Background Shape">
-                                </div> --}}
+
                         </div>
 
-                        <div class="banner-card pb--60 mb--50 swiper rbt-dot-bottom-center banner-swiper-active">
+                        <div class="banner-card pb--60 mb--50 swiper mySwiper rbt-dot-bottom-center banner-swiper-active ">
                             <div class="swiper-wrapper">
 
                                 <!-- Start Single Card  -->
@@ -310,13 +305,14 @@
                     <a class="rbt-cat-box rbt-cat-box-1 text-center" href="#">
                         <div class="inner">
                             <div class="icons">
-                                <img src="images/images/iso/loguito_9001.png" alt="ISO 9001">
+                                <img src="images/images/icon/file.png" alt="ISO 14001">
                             </div>
                             <div class="content">
-                                <h5 class="title">ISO 9001</h5>
+                                <h6 class="title" style="font-size: 16px; line-height: 1.4;">
+                                    Elaboración de la documentación del Sistema de Gestión SST
+                                </h6>
                                 <div class="read-more-btn">
-                                    <span class="rbt-btn-link">Gestión de la Calidad<i
-                                            class="feather-arrow-right"></i></span>
+                                    <span class="rbt-btn-link">Conocer más<i class="feather-arrow-right"></i></span>
                                 </div>
                             </div>
                         </div>
@@ -329,110 +325,135 @@
                     <a class="rbt-cat-box rbt-cat-box-1 text-center" href="#">
                         <div class="inner">
                             <div class="icons">
-                                <img src="images/images/iso/loguito_14001.png" alt="ISO 14001">
+                                <img src="images/images/icon/error.png" alt="ISO 14001">
                             </div>
                             <div class="content">
-                                <h5 class="title">ISO 14001</h5>
+                                <h6 class="title" style="font-size: 16px; line-height: 1.4;">
+                                    IPERC, RISST, ATS, PETS, PETAR, Mapas de <br> Riesgos
+                                </h6>
                                 <div class="read-more-btn">
-                                    <span class="rbt-btn-link">Gestión Ambiental<i class="feather-arrow-right"></i></span>
+                                    <span class="rbt-btn-link">Conocer más<i class="feather-arrow-right"></i></span>
                                 </div>
                             </div>
                         </div>
                     </a>
                 </div>
-                <!-- End Category Box Layout  -->
 
-                <!-- Start Category Box Layout  -->
+                <!-- Servicio 1 -->
                 <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                     <a class="rbt-cat-box rbt-cat-box-1 text-center" href="#">
                         <div class="inner">
                             <div class="icons">
-                                <img src="images/images/iso/loguito_45001.png" alt="ISO 45001">
+                                <img src="images/images/icon/capacitacion.png" alt="ISO 14001">
                             </div>
                             <div class="content">
-                                <h5 class="title">ISO 45001</h5>
+                                <h6 class="title" style="font-size: 16px; line-height: 1.4;">
+                                    Programación de capacitaciones, inspecciones y simulacros
+                                </h6>
                                 <div class="read-more-btn">
-                                    <span class="rbt-btn-link">Seguridad y Salud<i class="feather-arrow-right"></i></span>
+                                    <span class="rbt-btn-link">Conocer más<i class="feather-arrow-right"></i></span>
                                 </div>
                             </div>
                         </div>
                     </a>
                 </div>
-                <!-- End Category Box Layout  -->
 
-                <!-- Start Category Box Layout  -->
+                <!-- Servicio 2 -->
                 <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                     <a class="rbt-cat-box rbt-cat-box-1 text-center" href="#">
                         <div class="inner">
                             <div class="icons">
-                                <img src="images/images/iso/loguito_29783.png" alt="Ley 29783">
+                                <img src="images/images/icon/enseñar.png" alt="ISO 14001">
                             </div>
                             <div class="content">
-                                <h5 class="title">Ley 29783</h5>
+                                <h6 class="title" style="font-size: 16px; line-height: 1.4;">
+                                    Asesoría en conformación del Comité SST, Supervisor y brigadas de emergencia, incendios,
+                                    sismos
+                                </h6>
                                 <div class="read-more-btn">
-                                    <span class="rbt-btn-link">Sistema de SST<i class="feather-arrow-right"></i></span>
+                                    <span class="rbt-btn-link">Conocer más<i class="feather-arrow-right"></i></span>
                                 </div>
                             </div>
                         </div>
                     </a>
                 </div>
-                <!-- End Category Box Layout  -->
 
-                <!-- Start Category Box Layout  -->
+                <!-- Servicio 3 -->
                 <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                     <a class="rbt-cat-box rbt-cat-box-1 text-center" href="#">
                         <div class="inner">
                             <div class="icons">
-                                <img src="images/images/iso/loguito_27001.png" alt="ISO 27001">
+                                <img src="images/images/icon/actualizar.png" alt="ISO 14001">
                             </div>
                             <div class="content">
-                                <h5 class="title">ISO 27001</h5>
+                                <h6 class="title" style="font-size: 16px; line-height: 1.4;">
+                                    Revisión y actualización del Sistema de Gestión <br> SST
+                                </h6>
                                 <div class="read-more-btn">
-                                    <span class="rbt-btn-link">Seguridad de la Información<i
-                                            class="feather-arrow-right"></i></span>
+                                    <span class="rbt-btn-link">Conocer más<i class="feather-arrow-right"></i></span>
                                 </div>
                             </div>
                         </div>
                     </a>
                 </div>
-                <!-- End Category Box Layout  -->
 
-                <!-- Start Category Box Layout  -->
+                <!-- Servicio 4 -->
                 <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                     <a class="rbt-cat-box rbt-cat-box-1 text-center" href="#">
                         <div class="inner">
                             <div class="icons">
-                                <img src="images/images/iso/loguito_22000.png" alt="ISO 22000">
+                                <img src="images/images/icon/enseñar.png" alt="ISO 14001">
                             </div>
                             <div class="content">
-                                <h5 class="title">ISO 22000</h5>
+                                <h6 class="title" style="font-size: 16px; line-height: 1.4;">
+                                    Asesoría ante SUNAFIL, comparecencias y presentación de requerimientos
+                                </h6>
                                 <div class="read-more-btn">
-                                    <span class="rbt-btn-link">Seguridad Alimentaria<i
-                                            class="feather-arrow-right"></i></span>
+                                    <span class="rbt-btn-link">Conocer más<i class="feather-arrow-right"></i></span>
                                 </div>
                             </div>
                         </div>
                     </a>
                 </div>
-                <!-- End Category Box Layout  -->
 
-                <!-- Start Category Box Layout  -->
+                <!-- Servicio 5 -->
                 <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                     <a class="rbt-cat-box rbt-cat-box-1 text-center" href="#">
                         <div class="inner">
                             <div class="icons">
-                                <img src="images/images/iso/loguito_37001.png" alt="ISO 37001">
+                                <img src="images/images/icon/auditoria.png" alt="ISO 14001">
                             </div>
                             <div class="content">
-                                <h5 class="title">ISO 37001</h5>
+                                <h6 class="title" style="font-size: 16px; line-height: 1.4;">
+                                    Auditorías internas y externas del Sistema de Gestión SST
+                                </h6>
                                 <div class="read-more-btn">
-                                    <span class="rbt-btn-link">Gestión Antisoborno<i
-                                            class="feather-arrow-right"></i></span>
+                                    <span class="rbt-btn-link">Conocer más<i class="feather-arrow-right"></i></span>
                                 </div>
                             </div>
                         </div>
                     </a>
                 </div>
+
+                <!-- Servicio 6 -->
+                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                    <a class="rbt-cat-box rbt-cat-box-1 text-center" href="#">
+                        <div class="inner">
+                            <div class="icons">
+                                <img src="images/images/icon/trato.png" alt="ISO 14001">
+                            </div>
+                            <div class="content">
+                                <h6 class="title" style="font-size: 16px; line-height: 1.4;">
+                                    Homologación de proveedores
+                                </h6>
+                                <div class="read-more-btn">
+                                    <span class="rbt-btn-link">Conocer más<i class="feather-arrow-right"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
                 <!-- End Category Box Layout  -->
 
                 <!-- Start Category Box Layout  -->
@@ -693,47 +714,57 @@
                 <div class="col-lg-6">
                     <div class="inner pl--50 pl_sm--0 pl_md--0">
                         <div class="section-title text-start">
-                            <span class="subtitle bg-coral-opacity">Know About Us</span>
-                            <h2 class="title">Know About Histudy <br> Learning Platform</h2>
+                            <span class="subtitle bg-coral-opacity">Nosotros</span>
+                            <h2 class="title">¿Quiénes somos?</h2>
                         </div>
 
-                        <p class="description mt--30">Far far away, behind the word mountains, far from the
-                            countries Vokalia and Consonantia, there live the blind texts. Separated they live in
-                            Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                        <p class="description mt--30">
+                            Somos una empresa peruana comprometida con mejorar los niveles de competitividad de
+                            organizaciones públicas y privadas en todos los sectores productivos. Brindamos servicios de
+                            asesoramiento, auditorías, implementación de Sistemas Integrados de Gestión, outsourcing y
+                            mantenimiento.
+                        </p>
 
-                        <!-- Start Feature List  -->
+                        <p class="description mt--15">
+                            Ofrecemos un enfoque integral y personalizado para cada cliente, adaptándonos a las necesidades
+                            específicas de empresas grandes, medianas y pequeñas. Nuestro objetivo es garantizar el
+                            cumplimiento normativo, optimizar procesos y mejorar los indicadores de gestión.
+                        </p>
 
+                        <!-- Start Feature List -->
                         <div class="rbt-feature-wrapper mt--20 ml_dec_20">
                             <div class="rbt-feature feature-style-2 rbt-radius">
                                 <div class="icon bg-pink-opacity">
-                                    <i class="feather-heart"></i>
+                                    <i class="feather-thumbs-up"></i>
                                 </div>
                                 <div class="feature-content">
-                                    <h6 class="feature-title">Flexible Classes</h6>
-                                    <p class="feature-description">It is a long established fact that a reader
-                                        will
-                                        be distracted by this on readable content of when looking at its layout.</p>
+                                    <h6 class="feature-title">Clientes Satisfechos</h6>
+                                    <p class="feature-description">
+                                        Más de 50 empresas ya confían en nosotros para transformar su gestión empresarial,
+                                        consolidando relaciones duraderas basadas en resultados.
+                                    </p>
                                 </div>
                             </div>
 
                             <div class="rbt-feature feature-style-2 rbt-radius">
                                 <div class="icon bg-primary-opacity">
-                                    <i class="feather-book"></i>
+                                    <i class="feather-briefcase"></i>
                                 </div>
                                 <div class="feature-content">
-                                    <h6 class="feature-title">Learn From Anywhere</h6>
-                                    <p class="feature-description">Sed distinctio repudiandae eos recusandae
-                                        laborum eaque non eius iure suscipit laborum eaque non eius iure suscipit.
+                                    <h6 class="feature-title">Soluciones Estratégicas</h6>
+                                    <p class="feature-description">
+                                        Nos enfocamos en garantizar el cumplimiento legal, la mejora continua y la
+                                        excelencia operativa en cada organización que asesoramos.
                                     </p>
                                 </div>
                             </div>
                         </div>
+                        <!-- End Feature List -->
 
-                        <!-- End Feature List  -->
                         <div class="about-btn mt--40">
-                            <a class="rbt-btn btn-gradient hover-icon-reverse" href="#">
+                            <a class="rbt-btn btn-gradient hover-icon-reverse" href="{{ route('contactanos') }}">
                                 <span class="icon-reverse-wrapper">
-                                    <span class="btn-text">More About Us</span>
+                                    <span class="btn-text">Contáctanos</span>
                                     <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                     <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                 </span>
@@ -741,6 +772,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
@@ -801,91 +833,7 @@
     <!-- End Call To Action  -->
 
     <!-- Start Counterup Area  -->
-    <div class="rbt-counterup-area bg-color-extra2 rbt-section-gapBottom default-callto-action-overlap">
-        <div class="container">
-            <div class="row mb--60">
-                <div class="col-lg-12">
-                    <div class="section-title text-center">
-                        <span class="subtitle bg-primary-opacity">Why Choose Us</span>
-                        <h2 class="title">Creating A Community Of <br> Life Long Learners.</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row g-5 hanger-line">
-                <!-- Start Single Counter  -->
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12">
-                    <div class="rbt-counterup rbt-hover-03 border-bottom-gradient">
-                        <div class="top-circle-shape"></div>
-                        <div class="inner">
-                            <div class="rbt-round-icon">
-                                <img src="images/counter-01.png" alt="Icons Images">
-                            </div>
-                            <div class="content">
-                                <h3 class="counter"><span class="odometer" data-count="500">00</span>
-                                </h3>
-                                <span class="subtitle">Learners & counting</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Single Counter  -->
-
-                <!-- Start Single Counter  -->
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12 mt--60 mt_md--30 mt_sm--30 mt_mobile--60">
-                    <div class="rbt-counterup rbt-hover-03 border-bottom-gradient">
-                        <div class="top-circle-shape"></div>
-                        <div class="inner">
-                            <div class="rbt-round-icon">
-                                <img src="images/counter-02.png" alt="Icons Images">
-                            </div>
-                            <div class="content">
-                                <h3 class="counter"><span class="odometer" data-count="800">00</span>
-                                </h3>
-                                <span class="subtitle">Courses & Video</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Single Counter  -->
-
-                <!-- Start Single Counter  -->
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12 mt_md--60 mt_sm--60">
-                    <div class="rbt-counterup rbt-hover-03 border-bottom-gradient">
-                        <div class="top-circle-shape"></div>
-                        <div class="inner">
-                            <div class="rbt-round-icon">
-                                <img src="images/counter-03.png" alt="Icons Images">
-                            </div>
-                            <div class="content">
-                                <h3 class="counter"><span class="odometer" data-count="1000">00</span>
-                                </h3>
-                                <span class="subtitle">Certified Students</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Single Counter  -->
-
-                <!-- Start Single Counter  -->
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12 mt--60 mt_md--30 mt_sm--30 mt_mobile--60">
-                    <div class="rbt-counterup rbt-hover-03 border-bottom-gradient">
-                        <div class="top-circle-shape"></div>
-                        <div class="inner">
-                            <div class="rbt-round-icon">
-                                <img src="images/counter-04.png" alt="Icons Images">
-                            </div>
-                            <div class="content">
-                                <h3 class="counter"><span class="odometer" data-count="100">00</span>
-                                </h3>
-                                <span class="subtitle">Registered Enrolls</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Single Counter  -->
-            </div>
-        </div>
-    </div>
+    <br><br><br>
     <!-- End Counterup Area  -->
 
     <!-- Start Testimonial Area   -->
@@ -895,7 +843,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-title text-center mb--10">
-                            <span class="subtitle bg-primary-opacity">EDUCATION FOR EVERYONE</span>
+                            <span class="subtitle bg-primary-opacity">Nuestros clientes</span>
                             <h2 class="title">People like histudy education. <br> No joking - here’s the proof!
                             </h2>
                         </div>
@@ -2081,4 +2029,5 @@
             </div>
         </div>
     </div>
+
 @endsection
