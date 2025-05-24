@@ -483,8 +483,8 @@
             <div class="row mb--60">
                 <div class="col-lg-12">
                     <div class="section-title text-center">
-                        <span class="subtitle bg-secondary-opacity">Top Popular Course</span>
-                        <h2 class="title">Histudy Course student <br> can join with us.</h2>
+                        <span class="subtitle bg-secondary-opacity">Cursos</span>
+                        <h2 class="title">Unete a nuestros cursos <br> que tenemos para ti.</h2>
                     </div>
                 </div>
             </div>
@@ -516,12 +516,12 @@
                                     <span class="rating-count"> (15 Reviews)</span>
                                 </div>
                                 <div class="rbt-bookmark-btn">
-                                    <a class="rbt-round-btn" title="Bookmark" href="#"><i
+                                    <a class="rbt-round-btn" title="Bookmark" ><i
                                             class="feather-bookmark"></i></a>
                                 </div>
                             </div>
 
-                            <h4 class="rbt-card-title"><a href="course-details.html">React Front To Back</a>
+                            <h4 class="rbt-card-title"><a href="course-details.html">ISO 9001</a>
                             </h4>
                             <ul class="rbt-meta">
                                 <li><i class="feather-book"></i>20 Lessons</li>
@@ -777,65 +777,6 @@
         </div>
     </div>
     <!-- End About Area  -->
-
-    <!-- Start Call To Action  -->
-    <div class="rbt-callto-action-area mt_dec--half">
-        <div class="container">
-            <div class="row g-5">
-                <div class="col-lg-6">
-                    <div class="rbt-callto-action callto-action-default bg-color-white rbt-radius shadow-1">
-                        <div class="row align-items-center">
-                            <div class="col-lg-12 col-xl-5">
-                                <div class="inner">
-                                    <div class="rbt-category mb--20">
-                                        <a href="#">New Collection</a>
-                                    </div>
-                                    <h4 class="title mb--15">Online Courses from Histudy</h4>
-                                    <p class="mb--15">Top instructors from around the world</p>
-                                </div>
-                            </div>
-                            <div class="col-lg-12 col-xl-7">
-                                <div class="video-popup-wrapper mt_lg--10 mt_md--20 mt_sm--20">
-                                    <img class="w-100 rbt-radius" src="images/video-01.jpg" alt="Video Images">
-                                    <a class="rbt-btn rounded-player-2 sm-size popup-video position-to-top with-animation"
-                                        href="https://www.youtube.com/watch?v=nA1Aqp0sPQo">
-                                        <span class="play-icon"></span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="rbt-callto-action callto-action-default bg-color-white rbt-radius shadow-1">
-                        <div class="row align-items-center">
-                            <div class="col-lg-12">
-                                <div class="inner">
-                                    <div class="rbt-category mb--20">
-                                        <a href="#">Top Teacher</a>
-                                    </div>
-                                    <h4 class="title mb--10">Free Online Courses from Histudy School To Education
-                                    </h4>
-                                    <p class="mb--15">Top instructors from around the world</p>
-                                    <div class="read-more-btn">
-                                        <a class="rbt-btn rbt-switch-btn btn-gradient btn-sm" href="#">
-                                            <span data-text="Join Now">Join Now</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Call To Action  -->
-
-    <!-- Start Counterup Area  -->
-    <br><br><br>
-    <!-- End Counterup Area  -->
-
     <!-- Start Testimonial Area   -->
     <div class="rbt-testimonial-area bg-color-white rbt-section-gap overflow-hidden">
         <div class="wrapper">
@@ -1298,8 +1239,8 @@
         <div class="container">
             <div class="row mb--55">
                 <div class="section-title text-center">
-                    <span class="subtitle bg-white-opacity">STIMULATED TO TAKE PART IN?</span>
-                    <h2 class="title color-white">Upcoming Events</h2>
+                    <span class="subtitle bg-white-opacity">PROXIMOS EVENTOS</span>
+                    <h2 class="title color-white">Aprovecha....</h2>
                 </div>
             </div>
             <div class="row">
@@ -1483,8 +1424,8 @@
             <div class="row mb--60">
                 <div class="col-lg-12">
                     <div class="section-title text-center">
-                        <span class="subtitle bg-primary-opacity">Our Teacher</span>
-                        <h2 class="title">Whose Inspirations You</h2>
+                        <span class="subtitle bg-primary-opacity">Nuestros Profesionales</span>
+                        <h2 class="title">Te ofrecemos ...</h2>
                     </div>
                 </div>
             </div>

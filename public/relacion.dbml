@@ -1,0 +1,82 @@
+table users
+{
+  id int [pk, increment]
+  name varchar
+  email varchar
+  password varchar
+  created_at datetime
+}
+
+Table clients {
+  id int [pk, increment]
+  company_name varchar
+  contact_name varchar
+  email varchar
+  phone varchar
+  address varchar
+  created_at datetime
+}
+Table tags {
+  id int [pk, increment]
+  name varchar [unique]
+  icon varchar
+}
+
+Table consulting_area_tag {
+  id int [pk, increment]
+  consulting_area_id int [ref: > consulting_areas.id]
+  tag_id int [ref: > tags.id]
+}
+
+Table consulting_areas {
+  id int [pk, increment]
+  name varchar
+  title varchar
+  description text
+  image_url varchar
+  logo varchar
+
+  status bool
+  description text
+}
+
+Table services {
+  id int [pk, increment]
+  title varchar
+  description text
+  price decimal
+  consulting_area_id int [ref: > consulting_areas.id]
+}
+
+Table courses {
+  id int [pk, increment]
+  title varchar
+  description text
+  start_date date
+  end_date date
+  consulting_area_id int [ref: > consulting_areas.id]
+}
+
+Table contacts {
+  id int [pk, increment]
+  name varchar
+  email varchar
+  subject varchar
+  message text
+  created_at datetime
+}
+
+Table client_services {
+  id int [pk, increment]
+  client_id int [ref: > clients.id]
+  service_id int [ref: > services.id]
+  status varchar // pendiente, en_proceso, finalizado :v
+  requested_at datetime
+}
+
+Table client_courses {
+  id int [pk, increment]
+  client_id int [ref: > clients.id]
+  course_id int [ref: > courses.id]
+  enrolled_at datetime
+}
