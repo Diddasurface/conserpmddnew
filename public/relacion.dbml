@@ -16,17 +16,7 @@ Table clients {
   address varchar
   created_at datetime
 }
-Table tags {
-  id int [pk, increment]
-  name varchar [unique]
-  icon varchar
-}
 
-Table consulting_area_tag {
-  id int [pk, increment]
-  consulting_area_id int [ref: > consulting_areas.id]
-  tag_id int [ref: > tags.id]
-}
 
 Table consulting_areas {
   id int [pk, increment]
@@ -35,7 +25,7 @@ Table consulting_areas {
   description text
   image_url varchar
   logo varchar
-
+  tags varchar
   status bool
   description text
 }

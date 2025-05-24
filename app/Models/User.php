@@ -13,7 +13,7 @@ class User extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
-     * The attributes that are mass assignable.
+     * Los atributos que se pueden asignar en masa.
      *
      * @var array<int, string>
      */
@@ -21,10 +21,11 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        // 'remember_token', // opcional, Laravel lo maneja solo
     ];
 
     /**
-     * The attributes that should be hidden for serialization.
+     * Los atributos que deben ocultarse al serializar el modelo.
      *
      * @var array<int, string>
      */
@@ -34,12 +35,21 @@ class User extends Authenticatable
     ];
 
     /**
-     * The attributes that should be cast.
+     * Los atributos que deben ser casteados a tipos nativos.
      *
      * @var array<string, string>
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
-        'password' => 'hashed',
+        'password' => 'hashed', // Laravel 10+ encripta automáticamente si usas este cast
     ];
+
+    /**
+     * Relaciones con otros modelos (si tienes).
+     * Por ejemplo:
+     * public function roles()
+     * {
+     *     return $this->belongsToMany(Role::class);
+     * }
+     */
 }
