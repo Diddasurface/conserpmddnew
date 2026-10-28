@@ -198,8 +198,24 @@ class CertificateManagementTest extends TestCase
             ->assertHeader('Content-Type', 'image/png');
         $this->assertStringStartsWith("\x89PNG\r\n\x1a\n", $png->getContent());
         $this->assertStringContainsString('QR-'.$certificate->code.'.png', $png->headers->get('Content-Disposition'));
+        $image = imagecreatefromstring($png->getContent());
+        $centerX = intdiv(imagesx($image), 2);
+        $centerY = intdiv(imagesy($image), 2);
+        $redPixels = 0;
+        for ($x = $centerX - 55; $x < $centerX + 55; $x++) {
+            for ($y = $centerY - 55; $y < $centerY + 55; $y++) {
+                $color = imagecolorsforindex($image, imagecolorat($image, $x, $y));
+                if ($color['red'] > 100 && $color['red'] > $color['green'] * 1.4 && $color['red'] > $color['blue'] * 1.4) {
+                    $redPixels++;
+                }
+            }
+        }
+        $this->assertGreaterThan(200, $redPixels, 'The company logo should appear in the center of the QR.');
+        $background = imagecolorsforindex($image, imagecolorat($image, $centerX - 54, $centerY - 54));
+        $this->assertSame(['red' => 255, 'green' => 255, 'blue' => 255, 'alpha' => 0], $background);
+        imagedestroy($image);
         $this->get('/admin/certificados/'.$certificate->id.'/qr/svg')->assertOk()
-            ->assertHeader('Content-Type', 'image/svg+xml')->assertSee('<svg', false);
+            ->assertHeader('Content-Type', 'image/svg+xml')->assertSee('<svg', false)->assertSee('data:image/png;base64,', false);
     }
 
     public function test_invalid_uploads_and_expiration_dates_are_rejected(): void

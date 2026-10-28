@@ -2,9 +2,14 @@
 @section('title', $certificate ? 'Certificado '.$certificate->code : 'Certificado no encontrado')
 @section('content')
     @if ($certificate)
-        <section class="card">
-            <span class="status {{ $certificate->verification_status }}">{{ $certificate->status_label }}</span>
-            <h1>{{ $certificate->training_title }}</h1>
+        <section class="card certificate-summary">
+            <div class="certificate-heading">
+                <div>
+                    <span class="eyebrow">Verificación de certificado</span>
+                    <h1>{{ $certificate->training_title }}</h1>
+                </div>
+                <span class="status {{ $certificate->verification_status }}">{{ $certificate->status_label }}</span>
+            </div>
             @if ($certificate->verification_status === 'valid')
                 <p>Este certificado está registrado como válido por ConserpMDD.</p>
             @elseif ($certificate->verification_status === 'revoked')
@@ -23,7 +28,7 @@
                 <div><dt>Entidad emisora</dt><dd>ConserpMDD</dd></div>
             </dl>
             @if ($certificate->public_notes)
-                <h2>Observaciones</h2><p class="notes">{{ $certificate->public_notes }}</p>
+                <div class="observations"><h2>Observaciones</h2><p class="notes">{{ $certificate->public_notes }}</p></div>
             @endif
         </section>
         <section class="card">

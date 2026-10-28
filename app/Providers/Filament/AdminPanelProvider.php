@@ -32,6 +32,7 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->login()
             ->brandName('ConserpMDD')
+            ->favicon(asset('images/images/favicon.png'))
             ->font('Euclid Circular', url: asset('css/euclid-circulara.css'), provider: LocalFontProvider::class)
             ->defaultAvatarProvider(LocalAvatarProvider::class)
             ->colors([
