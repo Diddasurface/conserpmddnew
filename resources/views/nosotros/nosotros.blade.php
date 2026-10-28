@@ -1,5 +1,6 @@
 @extends('recursos.barras')
-@section('title', 'Nosotros | Conserp MDD')
+@section('title', 'Nosotros | ConserpMDD')
+@section('description', 'Conoce a ConserpMDD y nuestra asesoría en seguridad y salud en el trabajo, cumplimiento legal y sistemas integrados de gestión para empresas en Perú.')
 @section('nosotros')
     {{-- aqui prry --}}
     <div class="rbt-about-area about-style-1 bg-color-white rbt-section-gap">

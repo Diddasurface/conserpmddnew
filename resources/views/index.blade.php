@@ -1,5 +1,5 @@
 @extends('recursos.barras')
-@section('title', 'Princial | Conserp MDD')
+@section('title', 'ConserpMDD | Seguridad y Salud en el Trabajo y Normas ISO')
 @section('principal')
 
     <div class="rbt-banner-area rbt-banner-1">

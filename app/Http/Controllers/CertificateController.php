@@ -23,7 +23,8 @@ class CertificateController extends Controller
             return redirect()->route('certificates.show', ['code' => strtoupper($data['code'])]);
         }
 
-        return response()->view('certificates.index')->header('Cache-Control', 'no-store');
+        return response()->view('certificates.index')->header('Cache-Control', 'no-store')
+            ->header('X-Robots-Tag', 'noindex, nofollow');
     }
 
     public function show(string $code)

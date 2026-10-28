@@ -14,6 +14,8 @@ use Filament\Pages;
 use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
+use Filament\View\PanelsRenderHook;
+use Illuminate\Support\HtmlString;
 use Filament\Widgets;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
@@ -32,6 +34,7 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->login()
             ->brandName('ConserpMDD')
+            ->renderHook(PanelsRenderHook::HEAD_END, fn () => new HtmlString('<meta name="robots" content="noindex, nofollow">'))
             ->favicon(asset('images/images/favicon.png'))
             ->font('Euclid Circular', url: asset('css/euclid-circulara.css'), provider: LocalFontProvider::class)
             ->defaultAvatarProvider(LocalAvatarProvider::class)

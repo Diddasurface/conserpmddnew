@@ -1,5 +1,6 @@
 @extends('recursos.barras')
-@section('title', 'Contactanos | Conserp MDD')
+@section('title', 'Contáctanos | ConserpMDD')
+@section('description', 'Contacta a ConserpMDD para solicitar asesoría en seguridad y salud en el trabajo, auditorías y normas ISO. Atención en Puerto Maldonado, Perú.')
 @section('contactanos')
     <div class="rbt-newsletter-area bg-color-white rbt-section-gap">
         <div class="container">

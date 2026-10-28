@@ -1,2 +1,7 @@
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /admin
+Disallow: /api/
+Disallow: /livewire/
+
+Sitemap: https://conserpmdd.com/sitemap.xml
