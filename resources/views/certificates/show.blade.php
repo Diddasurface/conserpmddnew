@@ -18,7 +18,6 @@
                 <p><strong>Este certificado ha superado su fecha de vencimiento.</strong></p>
             @endif
             <dl>
-                <div><dt>Participante</dt><dd>{{ $certificate->recipient_name }}</dd></div>
                 <div><dt>Código de verificación</dt><dd class="code">{{ $certificate->code }}</dd></div>
                 <div><dt>Fecha de emisión</dt><dd>{{ $certificate->issued_at->format('d/m/Y') }}</dd></div>
                 <div><dt>Fecha de vencimiento</dt><dd>{{ $certificate->expires_at?->format('d/m/Y') ?? 'Sin vencimiento registrado' }}</dd></div>
@@ -33,11 +32,22 @@
         </section>
         <section class="card">
             <h2>Documento de respaldo</h2>
-            <p class="muted">Comprueba que el nombre, la capacitación y el código coincidan con el certificado recibido.</p>
-            <a href="{{ route('certificates.evidence', ['code' => $certificate->code]) }}" target="_blank" rel="noopener">
-                <img class="evidence" src="{{ route('certificates.evidence', ['code' => $certificate->code]) }}"
-                    alt="Documento de respaldo del certificado {{ $certificate->code }}" loading="lazy">
-            </a>
+            <p class="muted">Consulta el documento y su lista de participantes para comprobar la participación en esta capacitación.</p>
+            @if ($certificate->evidence_is_pdf)
+                <div class="document-actions">
+                    <a class="button" href="{{ route('certificates.evidence', ['code' => $certificate->code]) }}" target="_blank" rel="noopener">Abrir PDF</a>
+                    <a href="{{ route('certificates.evidence', ['code' => $certificate->code, 'download' => 1]) }}">Descargar PDF</a>
+                </div>
+                <object class="evidence-pdf" data="{{ route('certificates.evidence', ['code' => $certificate->code]) }}#view=FitH" type="application/pdf"
+                    aria-label="Documento de respaldo de la capacitación {{ $certificate->training_title }}">
+                    <p>Si tu navegador no muestra el documento, utiliza el botón Abrir PDF o Descargar PDF.</p>
+                </object>
+            @else
+                <a href="{{ route('certificates.evidence', ['code' => $certificate->code]) }}" target="_blank" rel="noopener">
+                    <img class="evidence" src="{{ route('certificates.evidence', ['code' => $certificate->code]) }}"
+                        alt="Documento de respaldo del certificado {{ $certificate->code }}" loading="lazy">
+                </a>
+            @endif
         </section>
     @else
         <section class="card search-card">

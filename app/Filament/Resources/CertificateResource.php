@@ -26,10 +26,9 @@ class CertificateResource extends Resource
     public static function form(Form $form): Form
     {
         return $form->schema([
-            Forms\Components\Section::make('Certificado y participante')->schema([
+            Forms\Components\Section::make('Certificado y capacitación')->schema([
                 Forms\Components\TextInput::make('code')->label('Código único')->disabled()->dehydrated(false)
                     ->placeholder('Se genera automáticamente al guardar'),
-                Forms\Components\TextInput::make('recipient_name')->label('Nombre del participante')->required()->maxLength(255),
                 Forms\Components\Select::make('course_id')->label('Curso del catálogo (opcional)')
                     ->relationship('course', 'title')->searchable()->live()
                     ->afterStateUpdated(function ($state, Set $set): void {
@@ -46,10 +45,11 @@ class CertificateResource extends Resource
                 Forms\Components\Select::make('status')->label('Estado')->options(Certificate::STATUSES)->default('draft')->required(),
             ])->columns(2),
             Forms\Components\Section::make('Documento de respaldo')->schema([
-                Forms\Components\FileUpload::make('evidence_image')->label('Imagen de la constancia o certificado')
+                Forms\Components\FileUpload::make('evidence_image')->label('Comprobante o constancia (PDF o imagen)')
                     ->disk('local')->directory('certificates/evidence')->visibility('private')
-                    ->image()->acceptedFileTypes(['image/jpeg', 'image/png', 'image/webp'])->maxSize(8192)->required()
-                    ->mimeTypeMap(['jpg' => 'image/jpeg', 'jpeg' => 'image/jpeg', 'jpe' => 'image/jpeg', 'jfif' => 'image/jpeg'])
+                    ->acceptedFileTypes(Certificate::EVIDENCE_MIME_TYPES)->maxSize(8192)->required()
+                    ->mimeTypeMap(['jpg' => 'image/jpeg', 'jpeg' => 'image/jpeg', 'jpe' => 'image/jpeg', 'jfif' => 'image/jpeg', 'pdf' => 'application/pdf'])
+                    ->openable()->downloadable()
                     ->getUploadedFileUsing(function (string $file, ?Certificate $record): ?array {
                         $disk = Storage::disk('local');
                         if (!$record || !$disk->exists($file)) {
@@ -60,7 +60,7 @@ class CertificateResource extends Resource
                             'name' => basename($file), 'size' => $disk->size($file), 'type' => $disk->mimeType($file),
                             'url' => route('admin.certificates.evidence', $record),
                         ];
-                    })->helperText('JPG, JPEG, PNG o WebP de hasta 8 MB. Esta imagen se mostrará en la verificación pública cuando publiques el certificado.'),
+                    })->helperText('PDF, JPG, JPEG, PNG o WebP de hasta 8 MB. Sube el documento con la lista de participantes; se mostrará en la verificación pública al publicar el registro.'),
                 Forms\Components\Textarea::make('public_notes')->label('Observaciones públicas')->rows(3)->maxLength(5000),
             ]),
             Forms\Components\Section::make('Enlace y QR')->schema([
@@ -76,7 +76,6 @@ class CertificateResource extends Resource
     {
         return $table->columns([
             Tables\Columns\TextColumn::make('code')->label('Código')->searchable()->copyable(),
-            Tables\Columns\TextColumn::make('recipient_name')->label('Participante')->searchable(),
             Tables\Columns\TextColumn::make('training_title')->label('Curso / capacitación')->searchable()->wrap(),
             Tables\Columns\TextColumn::make('issued_at')->label('Emisión')->date('d/m/Y')->sortable(),
             Tables\Columns\TextColumn::make('status_label')->label('Estado')->badge()
@@ -100,7 +99,7 @@ class CertificateResource extends Resource
                 ->visible(fn (Certificate $record) => $record->status === 'valid')
                 ->action(fn (Certificate $record) => $record->update(['status' => 'revoked'])),
         ])->emptyStateHeading('Todavía no hay certificados')
-            ->emptyStateDescription('Registra el participante y la constancia para generar su enlace de verificación y QR.');
+            ->emptyStateDescription('Registra la capacitación y su comprobante para generar el enlace de verificación y QR.');
     }
 
     public static function getPages(): array

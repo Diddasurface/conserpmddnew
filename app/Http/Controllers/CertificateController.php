@@ -35,18 +35,18 @@ class CertificateController extends Controller
             ->header('X-Robots-Tag', 'noindex, nofollow');
     }
 
-    public function evidence(string $code)
+    public function evidence(Request $request, string $code)
     {
         $certificate = Certificate::publiclyVisible()->where('code', strtoupper($code))->firstOrFail();
 
-        return $this->imageResponse($certificate);
+        return $this->documentResponse($certificate, $request->boolean('download'));
     }
 
     public function adminEvidence(Request $request, Certificate $certificate)
     {
         $this->authorizeAdmin($request);
 
-        return $this->imageResponse($certificate);
+        return $this->documentResponse($certificate, $request->boolean('download'));
     }
 
     public function qr(Request $request, Certificate $certificate, string $format, CertificateQr $qr)
@@ -69,17 +69,21 @@ class CertificateController extends Controller
             : config('app.env') === 'local'), 403);
     }
 
-    private function imageResponse(Certificate $certificate)
+    private function documentResponse(Certificate $certificate, bool $download = false)
     {
         $disk = Storage::disk('local');
         $path = $certificate->evidence_image;
         abort_unless(str_starts_with($path, 'certificates/evidence/') && !str_contains($path, '..') && $disk->exists($path), 404);
-        abort_unless(in_array($disk->mimeType($path), ['image/jpeg', 'image/png', 'image/webp'], true), 404);
+        $mimeType = $disk->mimeType($path);
+        abort_unless(in_array($mimeType, Certificate::EVIDENCE_MIME_TYPES, true), 404);
+        $extension = match ($mimeType) {
+            'application/pdf' => 'pdf', 'image/png' => 'png', 'image/webp' => 'webp', default => 'jpg',
+        };
 
-        return $disk->response($path, null, [
+        return $disk->response($path, 'comprobante-'.$certificate->code.'.'.$extension, [
             'Cache-Control' => 'no-store, private',
             'X-Content-Type-Options' => 'nosniff',
             'X-Robots-Tag' => 'noindex, nofollow',
-        ]);
+        ], $download ? 'attachment' : 'inline');
     }
 }

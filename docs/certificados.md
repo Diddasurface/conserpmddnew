@@ -1,13 +1,15 @@
 # Certificados de ConserpMDD
 
-En `/admin/certificados`, registra el participante, el curso o capacitación, la fecha de emisión y una imagen JPG, JPEG, PNG o WebP (hasta 8 MB). El curso del catálogo es opcional: puedes escribir cualquier capacitación. Las observaciones y la imagen se muestran públicamente al publicar el registro; utiliza documentos destinados a la verificación pública.
+En `/admin/certificados`, registra el curso o capacitación, la fecha de emisión y un comprobante PDF, JPG, JPEG, PNG o WebP (hasta 8 MB). No se solicita un participante individual: el documento puede contener la lista de todas las personas que participaron. El curso del catálogo es opcional: puedes escribir cualquier capacitación. Las observaciones y el documento se muestran públicamente al publicar el registro; utiliza documentos destinados a la verificación pública.
+
+Los PDF se muestran en el visor del navegador y tienen botones para abrirlos en otra pestaña o descargarlos, incluso si el dispositivo no permite la vista previa. Las imágenes conservan su vista previa. Puedes sustituir el comprobante sin cambiar el código ni el QR.
 
 Al guardar se genera un código único permanente, el enlace público y el QR. El formulario muestra el enlace seleccionable, la vista previa del QR y botones de descarga PNG y SVG. El SVG conserva su calidad al imprimir. En local, “Ver validación” abre la página local; el enlace compartido y el QR apuntan al dominio público.
 
 Estados:
 
-- **Borrador:** ni el registro ni su imagen son accesibles públicamente.
-- **Válido:** el registro y la imagen son públicos por código. Si tiene fecha de vencimiento, aparece como vencido desde el día siguiente.
+- **Borrador:** ni el registro ni su documento son accesibles públicamente.
+- **Válido:** el registro y el documento son públicos por código. Si tiene fecha de vencimiento, aparece como vencido desde el día siguiente.
 - **Revocado:** el mismo enlace muestra que el certificado ya no es válido. Se conserva el documento como respaldo del registro.
 
 Se evita la eliminación desde el panel para conservar la trazabilidad de los QR impresos. El código no se puede modificar, y eliminar un curso del catálogo no elimina sus certificados.

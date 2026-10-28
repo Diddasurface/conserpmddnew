@@ -8,7 +8,7 @@
     <link rel="icon" type="image/png" href="{{ asset('images/images/favicon.png') }}">
     <link rel="apple-touch-icon" href="{{ asset('images/images/favicon.png') }}">
     <link rel="stylesheet" href="{{ asset('css/euclid-circulara.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/certificates.css') }}?v=2">
+    <link rel="stylesheet" href="{{ asset('css/certificates.css') }}?v=3">
 </head>
 <body>
     <header>

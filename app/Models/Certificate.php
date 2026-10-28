@@ -6,14 +6,20 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\ValidationException;
 
 class Certificate extends Model
 {
     public const STATUSES = ['draft' => 'Borrador', 'valid' => 'Válido', 'revoked' => 'Revocado'];
+    public const EVIDENCE_MIME_TYPES = ['image/jpeg', 'image/png', 'image/webp', 'application/pdf'];
+
+    // Preserve compatibility with existing records; participants now belong to the document.
+    protected $attributes = ['recipient_name' => ''];
+    protected $hidden = ['recipient_name'];
 
     protected $fillable = [
-        'course_id', 'recipient_name', 'training_title', 'issued_at', 'expires_at',
+        'course_id', 'training_title', 'issued_at', 'expires_at',
         'hours', 'evidence_image', 'public_notes', 'status',
     ];
 
@@ -59,5 +65,12 @@ class Certificate extends Model
     public function getVerificationUrlAttribute(): string
     {
         return rtrim(config('certificates.public_url'), '/').route('certificates.show', ['code' => $this->code], false);
+    }
+
+    public function getEvidenceIsPdfAttribute(): bool
+    {
+        $disk = Storage::disk('local');
+
+        return $disk->exists($this->evidence_image) && $disk->mimeType($this->evidence_image) === 'application/pdf';
     }
 }
