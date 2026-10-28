@@ -1,6 +1,6 @@
 # Certificados de ConserpMDD
 
-En `/admin/certificados`, registra el participante, el curso o capacitación, la fecha de emisión y una imagen JPG, PNG o WebP (hasta 8 MB). El curso del catálogo es opcional: puedes escribir cualquier capacitación. Las observaciones y la imagen se muestran públicamente al publicar el registro; utiliza documentos destinados a la verificación pública.
+En `/admin/certificados`, registra el participante, el curso o capacitación, la fecha de emisión y una imagen JPG, JPEG, PNG o WebP (hasta 8 MB). El curso del catálogo es opcional: puedes escribir cualquier capacitación. Las observaciones y la imagen se muestran públicamente al publicar el registro; utiliza documentos destinados a la verificación pública.
 
 Al guardar se genera un código único permanente, el enlace público y el QR. El formulario muestra el enlace seleccionable, la vista previa del QR y botones de descarga PNG y SVG. El SVG conserva su calidad al imprimir. En local, “Ver validación” abre la página local; el enlace compartido y el QR apuntan al dominio público.
 

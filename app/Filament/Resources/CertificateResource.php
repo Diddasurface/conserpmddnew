@@ -49,6 +49,7 @@ class CertificateResource extends Resource
                 Forms\Components\FileUpload::make('evidence_image')->label('Imagen de la constancia o certificado')
                     ->disk('local')->directory('certificates/evidence')->visibility('private')
                     ->image()->acceptedFileTypes(['image/jpeg', 'image/png', 'image/webp'])->maxSize(8192)->required()
+                    ->mimeTypeMap(['jpg' => 'image/jpeg', 'jpeg' => 'image/jpeg', 'jpe' => 'image/jpeg', 'jfif' => 'image/jpeg'])
                     ->getUploadedFileUsing(function (string $file, ?Certificate $record): ?array {
                         $disk = Storage::disk('local');
                         if (!$record || !$disk->exists($file)) {
@@ -59,7 +60,7 @@ class CertificateResource extends Resource
                             'name' => basename($file), 'size' => $disk->size($file), 'type' => $disk->mimeType($file),
                             'url' => route('admin.certificates.evidence', $record),
                         ];
-                    })->helperText('JPG, PNG o WebP de hasta 8 MB. Esta imagen se mostrará en la verificación pública cuando publiques el certificado.'),
+                    })->helperText('JPG, JPEG, PNG o WebP de hasta 8 MB. Esta imagen se mostrará en la verificación pública cuando publiques el certificado.'),
                 Forms\Components\Textarea::make('public_notes')->label('Observaciones públicas')->rows(3)->maxLength(5000),
             ]),
             Forms\Components\Section::make('Enlace y QR')->schema([

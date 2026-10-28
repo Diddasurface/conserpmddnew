@@ -16,6 +16,7 @@ use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\ValidationException;
 use Livewire\Livewire;
+use Livewire\Features\SupportFileUploads\FileUploadController;
 use Tests\TestCase;
 
 class CertificateManagementTest extends TestCase
@@ -88,6 +89,51 @@ class CertificateManagementTest extends TestCase
         $this->get('/admin/certificados/'.$certificate->id.'/qr/png')->assertRedirect('/admin/login');
         $this->get('/admin/certificados/'.$certificate->id.'/documento')->assertRedirect('/admin/login');
         $this->get('/admin/certificados/create')->assertRedirect('/admin/login');
+    }
+
+    /** @dataProvider jpegFileNames */
+    public function test_jpeg_certificates_can_be_uploaded_and_displayed(string $filename): void
+    {
+        $this->signIn();
+        Livewire::test(CreateCertificate::class)->fillForm([
+            'recipient_name' => 'Participante JPEG', 'training_title' => 'Seguridad laboral',
+            'issued_at' => today()->toDateString(), 'status' => 'valid',
+            'evidence_image' => UploadedFile::fake()->image($filename),
+        ])->call('create')->assertHasNoFormErrors();
+
+        $certificate = Certificate::sole();
+        Storage::disk('local')->assertExists($certificate->evidence_image);
+        $this->get('/certificados/'.$certificate->code.'/documento')
+            ->assertOk()->assertHeader('Content-Type', 'image/jpeg');
+    }
+
+    public static function jpegFileNames(): array
+    {
+        return [['constancia.jpeg'], ['CONSTANCIA.JPEG'], ['constancia.jpg']];
+    }
+
+    public function test_readable_jpeg_temporary_files_without_realpath_can_be_uploaded(): void
+    {
+        $image = UploadedFile::fake()->image('whatsapp.jpeg');
+        $upload = new class($image->getPathname(), 'whatsapp.jpeg', 'image/jpeg', UPLOAD_ERR_OK, true) extends UploadedFile
+        {
+            public function getRealPath(): string|false
+            {
+                return false;
+            }
+        };
+
+        $paths = app(FileUploadController::class)->validateAndStore([$upload], 'local');
+        $storedPath = 'livewire-tmp/'.$paths->first();
+        Storage::disk('local')->assertExists($storedPath);
+        $this->assertSame(file_get_contents($image->getPathname()), Storage::disk('local')->get($storedPath));
+    }
+
+    public function test_upload_endpoint_still_rejects_unsigned_requests(): void
+    {
+        $this->postJson('/livewire/upload-file', [
+            'files' => [UploadedFile::fake()->image('constancia.jpeg')],
+        ])->assertUnauthorized();
     }
 
     public function test_revocation_keeps_the_same_url_and_clearly_invalidates_the_certificate(): void
