@@ -3,6 +3,7 @@
 namespace App\Providers\Filament;
 
 use App\Filament\Resources\CourseResource;
+use App\Filament\Resources\CertificateResource;
 use App\Support\LocalAvatarProvider;
 use Filament\FontProviders\LocalFontProvider;
 use Filament\Http\Middleware\Authenticate;
@@ -38,6 +39,7 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->resources([
                 CourseResource::class,
+                CertificateResource::class,
             ])
             ->pages([
                 Pages\Dashboard::class,

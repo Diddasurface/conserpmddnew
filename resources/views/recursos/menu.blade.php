@@ -7,6 +7,7 @@
         <ul class="submenu">
             <li><a href="{{ route('inicio') }}#cursos">Ver cursos</a></li>
             <li><a href="{{ route('inicio') }}#capacitaciones-sst">Capacitaciones en SST</a></li>
+            <li><a href="{{ route('certificates.index') }}">Verificar certificado</a></li>
         </ul>
     </li>
     <li class="has-dropdown has-menu-child-item">
