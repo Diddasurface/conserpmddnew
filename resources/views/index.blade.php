@@ -46,7 +46,7 @@
                                     <div class="rbt-card variation-01 rbt-hover">
                                         <div class="rbt-card-img" id="iso-9001">
                                             <a href="iso-9001.html">
-                                                <img src="images/images/iso/iso_9001.png" alt="ISO 9001">
+                                                <img src="{{ asset('images/images/iso/ISO_9001.png') }}" alt="ISO 9001">
                                                 <div class="rbt-badge-3 bg-white">
                                                     <span>ISO</span>
                                                     <span>9001</span>
@@ -79,7 +79,7 @@
                                     <div class="rbt-card variation-01 rbt-hover">
                                         <div class="rbt-card-img" id="iso-14001">
                                             <a href="iso-14001.html">
-                                                <img src="images/images/iso/iso_14001.png" alt="ISO 14001">
+                                                <img src="{{ asset('images/images/iso/ISO_14001.png') }}" alt="ISO 14001">
                                                 <div class="rbt-badge-3 bg-white">
                                                     <span>ISO</span>
                                                     <span>14001</span>
@@ -112,7 +112,7 @@
                                     <div class="rbt-card variation-01 rbt-hover">
                                         <div class="rbt-card-img" id="iso-22000">
                                             <a href="iso-22000.html">
-                                                <img src="images/images/iso/iso_22000.png" alt="ISO 22000">
+                                                <img src="{{ asset('images/images/iso/ISO_22000.png') }}" alt="ISO 22000">
                                                 <div class="rbt-badge-3 bg-white">
                                                     <span>ISO</span>
                                                     <span>22000</span>
@@ -143,7 +143,7 @@
                                     <div class="rbt-card variation-01 rbt-hover">
                                         <div class="rbt-card-img" id="iso-27001">
                                             <a href="iso-27001.html">
-                                                <img src="images/images/iso/iso_27001.png" alt="ISO 27001">
+                                                <img src="{{ asset('images/images/iso/ISO_27001.png') }}" alt="ISO 27001">
                                                 <div class="rbt-badge-3 bg-white">
                                                     <span>ISO</span>
                                                     <span>27001</span>
@@ -175,7 +175,7 @@
                                     <div class="rbt-card variation-01 rbt-hover">
                                         <div class="rbt-card-img" id="iso-37001">
                                             <a href="iso-37001.html">
-                                                <img src="images/images/iso/iso_37001.png" alt="ISO 37001">
+                                                <img src="{{ asset('images/images/iso/iso_37001.png') }}" alt="ISO 37001">
                                                 <div class="rbt-badge-3 bg-white">
                                                     <span>ISO</span>
                                                     <span>37001</span>
@@ -207,7 +207,7 @@
                                     <div class="rbt-card variation-01 rbt-hover">
                                         <div class="rbt-card-img" id="iso-45001">
                                             <a href="iso-45001.html">
-                                                <img src="images/images/iso/iso_45001.png" alt="ISO 45001">
+                                                <img src="{{ asset('images/images/iso/ISO_45001.png') }}" alt="ISO 45001">
                                                 <div class="rbt-badge-3 bg-white">
                                                     <span>ISO</span>
                                                     <span>45001</span>
@@ -239,7 +239,7 @@
                                     <div class="rbt-card variation-01 rbt-hover">
                                         <div class="rbt-card-img">
                                             <a href="ley-29783.html">
-                                                <img src="images/images/iso/ley_29783.png" alt="Ley 29783">
+                                                <img src="{{ asset('images/images/iso/ley_29783.png') }}" alt="Ley 29783">
                                                 <div class="rbt-badge-3 bg-white">
                                                     <span>Ley</span>
                                                     <span>29783</span>
