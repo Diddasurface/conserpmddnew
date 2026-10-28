@@ -8,7 +8,7 @@
     <link rel="icon" type="image/png" href="{{ asset('images/images/favicon.png') }}">
     <link rel="apple-touch-icon" href="{{ asset('images/images/favicon.png') }}">
     <link rel="stylesheet" href="{{ asset('css/euclid-circulara.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/certificates.css') }}?v=3">
+    <link rel="stylesheet" href="{{ asset('css/certificates.css') }}?v=4">
 </head>
 <body>
     <header>
@@ -19,5 +19,6 @@
     </header>
     <main>@yield('content')</main>
     <footer>ConserpMDD · Verificación de certificados y constancias</footer>
+    @stack('scripts')
 </body>
 </html>

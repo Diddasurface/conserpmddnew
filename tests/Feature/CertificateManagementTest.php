@@ -96,7 +96,8 @@ class CertificateManagementTest extends TestCase
         $certificate = Certificate::sole();
         $this->assertTrue($certificate->evidence_is_pdf);
         $this->get('/certificados/'.$certificate->code)->assertOk()->assertSee('Abrir PDF')->assertSee('Descargar PDF')
-            ->assertSee('type="application/pdf"', false)->assertDontSee('<dt>Participante</dt>', false);
+            ->assertSee('data-certificate-pdf', false)->assertSee('js/certificate-pdf.js', false)
+            ->assertDontSee('<object', false)->assertDontSee('<dt>Participante</dt>', false);
         $response = $this->get('/certificados/'.$certificate->code.'/documento')->assertOk()
             ->assertHeader('Content-Type', 'application/pdf')->assertStreamedContent(file_get_contents($pdf->getPathname()));
         $this->assertStringStartsWith('inline;', $response->headers->get('Content-Disposition'));
