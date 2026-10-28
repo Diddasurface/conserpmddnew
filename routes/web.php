@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\loginController;
+use App\Models\Course;
+use App\Models\CourseSection;
 use Illuminate\Support\Facades\Route;
 
 
@@ -16,7 +17,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('index', [
+        'courses' => Course::published()->get(),
+        'courseSection' => CourseSection::current(),
+    ]);
 })->name('inicio');
 
 Route::get('/contactanos', function () {
