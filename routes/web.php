@@ -1,7 +1,9 @@
 <?php
 
 use App\Models\Course;
+use App\Models\SiteContent;
 use App\Http\Controllers\CertificateController;
+use App\Http\Controllers\ServiceController;
 use Filament\Http\Middleware\Authenticate as FilamentAuthenticate;
 use Filament\Http\Middleware\SetUpPanel;
 use App\Models\CourseSection;
@@ -20,20 +22,27 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    $siteContent = SiteContent::current();
+
     return view('index', [
         'courses' => Course::published()->get(),
         'courseSection' => CourseSection::current(),
+        'siteContent' => $siteContent,
+        'services' => $siteContent->services(),
     ]);
 })->name('inicio');
 
 Route::get('/contactanos', function () {
-    return view('contactanos.contactanos');
+    return view('contactanos.contactanos', ['siteContent' => SiteContent::current()]);
 })->name('contactanos');
 
 
 Route::get('/nosotros', function () {
-    return view('nosotros.nosotros');
+    return view('nosotros.nosotros', ['siteContent' => SiteContent::current()]);
 })->name('nosotros');
+
+Route::get('/servicios', [ServiceController::class, 'index'])->name('services.index');
+Route::get('/servicios/{service}', [ServiceController::class, 'show'])->name('services.show');
 
 Route::get('/certificados', [CertificateController::class, 'index'])->name('certificates.index');
 Route::get('/certificados/{code}/documento', [CertificateController::class, 'evidence'])->name('certificates.evidence');

@@ -12,7 +12,7 @@
                 '@id' => $siteUrl.'/#organization',
                 'name' => 'ConserpMDD',
                 'url' => $siteUrl.'/',
-                'logo' => $siteUrl.'/images/images/logo.png',
+                'logo' => $siteUrl.'/images/images/logo-oficial-recortado.png',
                 'telephone' => '+51982604441',
                 'description' => config('seo.description'),
             ],

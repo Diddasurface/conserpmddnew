@@ -7,7 +7,7 @@
         <form method="GET" action="{{ route('certificates.index') }}">
             <label for="code">Código del certificado</label>
             <input id="code" name="code" type="text" value="{{ old('code', request('code')) }}"
-                placeholder="CMDD-…" maxlength="40" required autocomplete="off" spellcheck="false">
+                placeholder="CSP-SST-XXXXX" maxlength="40" required autocomplete="off" spellcheck="false">
             @error('code')<p class="error">Ingresa un código válido, usando solo letras, números y guiones.</p>@enderror
             <button type="submit">Verificar certificado</button>
         </form>

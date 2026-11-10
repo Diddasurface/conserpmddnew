@@ -30,7 +30,7 @@ class SeoTest extends TestCase
     {
         $titles = [];
         $descriptions = [];
-        foreach (['/', '/nosotros', '/contactanos'] as $path) {
+        foreach (['/', '/servicios', '/servicios/implementacion-sst', '/nosotros', '/contactanos'] as $path) {
             $response = $this->get($path.'?utm_source=test')->assertOk();
             $dom = new DOMDocument;
             @$dom->loadHTML($response->getContent());
@@ -46,8 +46,8 @@ class SeoTest extends TestCase
             $this->assertStringContainsString('ConserpMDD', end($titles));
             $this->assertNotEmpty(end($descriptions));
         }
-        $this->assertCount(3, array_unique($titles));
-        $this->assertCount(3, array_unique($descriptions));
+        $this->assertCount(5, array_unique($titles));
+        $this->assertCount(5, array_unique($descriptions));
     }
 
     public function test_local_pages_and_certificate_pages_keep_noindex(): void
@@ -69,7 +69,19 @@ class SeoTest extends TestCase
             $locations[] = $node->textContent;
         }
         $this->assertSame([
-            'https://conserpmdd.com/', 'https://conserpmdd.com/nosotros', 'https://conserpmdd.com/contactanos',
+            'https://conserpmdd.com/',
+            'https://conserpmdd.com/servicios',
+            'https://conserpmdd.com/servicios/implementacion-sst',
+            'https://conserpmdd.com/servicios/salud-ocupacional',
+            'https://conserpmdd.com/servicios/monitoreos-ocupacionales',
+            'https://conserpmdd.com/servicios/capacitaciones-sst',
+            'https://conserpmdd.com/servicios/psicologia-ocupacional',
+            'https://conserpmdd.com/servicios/prevencion-hostigamiento-sexual',
+            'https://conserpmdd.com/servicios/emergencias-y-prevencion',
+            'https://conserpmdd.com/servicios/outsourcing-sst',
+            'https://conserpmdd.com/servicios/asesoria-sector-minero',
+            'https://conserpmdd.com/nosotros',
+            'https://conserpmdd.com/contactanos',
         ], $locations);
         $robots = file_get_contents(public_path('robots.txt'));
         $this->assertStringContainsString('Sitemap: https://conserpmdd.com/sitemap.xml', $robots);

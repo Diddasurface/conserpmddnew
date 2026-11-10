@@ -4,6 +4,7 @@ namespace App\Providers\Filament;
 
 use App\Filament\Resources\CourseResource;
 use App\Filament\Resources\CertificateResource;
+use App\Filament\Resources\SiteContentResource;
 use App\Support\LocalAvatarProvider;
 use Filament\FontProviders\LocalFontProvider;
 use Filament\Http\Middleware\Authenticate;
@@ -34,6 +35,8 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->login()
             ->brandName('ConserpMDD')
+            ->brandLogo(asset('images/images/logo-oficial-recortado.png'))
+            ->brandLogoHeight('2.75rem')
             ->renderHook(PanelsRenderHook::HEAD_END, fn () => new HtmlString('<meta name="robots" content="noindex, nofollow">'))
             ->favicon(asset('images/images/favicon.png'))
             ->font('Euclid Circular', url: asset('css/euclid-circulara.css'), provider: LocalFontProvider::class)
@@ -42,6 +45,7 @@ class AdminPanelProvider extends PanelProvider
                 'primary' => Color::Amber,
             ])
             ->resources([
+                SiteContentResource::class,
                 CourseResource::class,
                 CertificateResource::class,
             ])

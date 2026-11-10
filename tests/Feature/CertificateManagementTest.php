@@ -149,7 +149,7 @@ class CertificateManagementTest extends TestCase
 
         $certificate = Certificate::sole();
         Storage::disk('local')->assertExists($certificate->evidence_image);
-        $this->assertMatchesRegularExpression('/^CMDD-[0-9A-Z]{26}$/', $certificate->code);
+        $this->assertMatchesRegularExpression('/^CSP-SST-[A-HJ-NP-Z2-9]{5}$/', $certificate->code);
         $this->assertSame('https://conserpmdd.com/certificados/'.$certificate->code, $certificate->verification_url);
 
         Livewire::test(EditCertificate::class, ['record' => $certificate->id])

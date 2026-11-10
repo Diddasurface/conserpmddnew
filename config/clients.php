@@ -1,0 +1,26 @@
+<?php
+
+return [
+    ['name' => 'APROIN Consultoría y Capacitación', 'logo' => 'aproin.png'],
+    ['name' => 'AWR Ingenieros', 'logo' => 'awr-ingenieros.jpg'],
+    ['name' => 'Inge Verde', 'logo' => 'inge-verde.jpg'],
+    ['name' => 'Insercal', 'logo' => 'insercal.jpg'],
+    ['name' => 'Consorcio Real', 'logo' => 'consorcio-real.png'],
+    ['name' => 'Gliser', 'logo' => 'gliser.png'],
+    ['name' => 'Servicios Múltiples Pauliv', 'logo' => 'servicios-pauliv.jpg'],
+    ['name' => 'PrestaFácil Perú', 'logo' => 'prestafacil.png'],
+    ['name' => 'El Hornito', 'logo' => 'el-hornito.png'],
+    ['name' => 'LLC Consultora Empresarial', 'logo' => 'llc-consultora.jpg'],
+    ['name' => 'La Reina Restobar', 'logo' => 'la-reina.jpg'],
+    ['name' => 'Puerto Fusión', 'logo' => 'puerto-fusion.jpg'],
+    ['name' => 'CMAS Ingenieros', 'logo' => 'cmas-ingenieros.jpg'],
+    ['name' => 'Concesión Minera Abel 3', 'logo' => 'abel-3.jpg'],
+    ['name' => 'Concesión Minera Truenos 2003', 'logo' => 'truenos-2003.jpg'],
+    ['name' => 'Concesión Minera El Príncipe Azul 1', 'logo' => 'el-principe-azul-1.jpg'],
+    ['name' => 'Concesión Minera Linda 2', 'logo' => 'linda-2.png'],
+    ['name' => 'Gallo de Oro', 'logo' => 'gallo-de-oro.jpg'],
+    ['name' => 'Concesión Minera Apolo Trak', 'logo' => 'apolo-trak.jpg'],
+    ['name' => 'Sokapar Multiservicios Generales', 'logo' => 'sokapar.jpg'],
+    ['name' => 'Inversiones World Tiger', 'logo' => 'inversiones-world-tiger.jpg'],
+    ['name' => 'Grupo Saim', 'logo' => 'grupo-saim.jpg'],
+];

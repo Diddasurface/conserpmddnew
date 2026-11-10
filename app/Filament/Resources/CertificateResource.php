@@ -28,7 +28,7 @@ class CertificateResource extends Resource
         return $form->schema([
             Forms\Components\Section::make('Certificado y capacitación')->schema([
                 Forms\Components\TextInput::make('code')->label('Código único')->disabled()->dehydrated(false)
-                    ->placeholder('Se genera automáticamente al guardar'),
+                    ->placeholder('CSP-SST-XXXXX (se genera al guardar)'),
                 Forms\Components\Select::make('course_id')->label('Curso del catálogo (opcional)')
                     ->relationship('course', 'title')->searchable()->live()
                     ->afterStateUpdated(function ($state, Set $set): void {
